@@ -13,6 +13,10 @@
     
     `./gradlew :di:console:runReleaseExecutableMingwX64`
     
+    - `di:jvm`: Sample for Java Jar application with Kodein-DI implementation 
+    
+    `./gradlew :di:jvm:jar | ava -jar di/jvm/build/libs/jvm.jar`
+    
     - `di:tornadofx`: Sample for TornadoFX integration of Kodein-DI 
     
     `./gradlew :di:tornadofx:run`
