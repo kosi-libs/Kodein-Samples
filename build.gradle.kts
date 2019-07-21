@@ -5,11 +5,11 @@ buildscript {
         }
 
         dependencies {
-            classpath(kotlin("gradle-plugin", version = "1.3.31"))
+            classpath(kotlin("gradle-plugin", version = "1.3.41"))
         }
     }
 
-    extra.set("kodeinVersion", "6.3.0")
+    extra.set("kodeinVersion", "6.3.3")
 }
 
 allprojects {
