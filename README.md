@@ -12,7 +12,11 @@
     `./gradlew :di:console:runReleaseExecutableMacosX64`
     
     `./gradlew :di:console:runReleaseExecutableMingwX64`
+  
+    - `di:js`: Sample for JavaScript browser application with Kodein-DI implementation 
     
+    `./gradlew :di:js:browserRun`
+  
     - `di:jvm`: Sample for Java Jar application with Kodein-DI implementation 
     
     `./gradlew :di:jvm:jar && java -jar di/jvm/build/libs/jvm.jar`

@@ -8,20 +8,20 @@ val kodeinVersion: String by rootProject.extra
 
 kotlin {
     targets {
-        jvm() {
+        jvm {
             tasks.withType<KotlinCompile> {
                 kotlinOptions {
                     jvmTarget = "1.8"
                 }
             }
         }
-        js() {
+        js {
             browser {}
             nodejs {}
         }
         macosX64("macos") { binaries.sharedLib() }
-        linuxX64("linux"){ binaries.sharedLib() }
-        mingwX64("mingw"){ binaries.sharedLib() }
+        linuxX64("linux") { binaries.sharedLib() }
+        mingwX64("mingw") { binaries.sharedLib() }
     }
 
     sourceSets {
