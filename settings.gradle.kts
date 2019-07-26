@@ -5,5 +5,6 @@ include(
     ":di:console",
     ":di:js",
     ":di:jvm",
+    ":di:ktor",
     ":di:tornadofx"
 )

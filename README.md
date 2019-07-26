@@ -21,6 +21,10 @@
     
     `./gradlew :di:jvm:jar && java -jar di/jvm/build/libs/jvm.jar`
     
+    - `di:ktor`: Sample for Ktor server application with Kodein-DI implementation 
+    
+    `./gradlew :demo:demo-ktor:run` - And navigate to [http://localhost:8000/](http://localhost:8000/) to see the sample home page.  
+
     - `di:tornadofx`: Sample for TornadoFX integration of Kodein-DI 
     
     `./gradlew :di:tornadofx:run`
