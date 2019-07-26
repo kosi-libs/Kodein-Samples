@@ -1,6 +1,10 @@
 # Samples projects for Kodein Framework
 
 - **Kodein-DI**
+    - `di:android`: Android application with Kodein-DI implementation 
+    
+    `./gradlew :di:android:assembleDebug` - Or run it through your IDE
+    
     - `di:common`: Kotlin MPP sharable library with Kodein-DI implementation 
     
     `./gradlew :di:common:build`
