@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     id("org.jetbrains.kotlin.multiplatform")
 }
@@ -6,7 +8,13 @@ val kodeinVersion: String by rootProject.extra
 
 kotlin {
     targets {
-        jvm()
+        jvm() {
+            tasks.withType<KotlinCompile> {
+                kotlinOptions {
+                    jvmTarget = "1.8"
+                }
+            }
+        }
         js() {
             browser {}
             nodejs {}
