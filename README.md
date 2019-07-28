@@ -59,7 +59,7 @@
 `di:ktor`: Sample for Ktor server application with Kodein-DI implementation 
 
 ```bash
-./gradlew :demo:demo-ktor:run 
+./gradlew :di:ktor:run 
 ```
 And navigate to [http://localhost:8000/](http://localhost:8000/) to see the sample home page.
 

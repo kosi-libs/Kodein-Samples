@@ -9,16 +9,14 @@ buildscript {
     }
 }
 
-    extra.set("kodeinVersion", "6.3.3")
-}
+extra.set("kodeinVersion", "6.4.0-dev+")
 
 allprojects {
     group = "org.kodein.samples"
 
     repositories {
-        mavenLocal()
-        mavenCentral()
         jcenter()
         google()
+        maven(url = "https://dl.bintray.com/kodein-framework/kodein-dev")
     }
 }
