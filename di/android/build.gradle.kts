@@ -1,9 +1,17 @@
-import org.jetbrains.kotlin.gradle.tasks.*
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
+val kodeinVersion: String by rootProject.extra
 
 plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-android-extensions")
+}
+
+repositories {
+    jcenter()
+    google()
+    maven(url = "https://dl.bintray.com/kodein-framework/kodein-dev")
 }
 
 android {
@@ -46,7 +54,6 @@ android {
 }
 
 dependencies {
-    val kodeinVersion: String by rootProject.extra
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7")
 
     implementation("androidx.appcompat:appcompat:1.0.2")

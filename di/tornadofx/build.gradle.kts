@@ -7,6 +7,11 @@ plugins {
     application
 }
 
+repositories {
+    jcenter()
+    maven(url = "https://dl.bintray.com/kodein-framework/kodein-dev")
+}
+
 application {
     mainClassName = "org.kodein.samples.di.tornadofx.KodeinApplication"
 }

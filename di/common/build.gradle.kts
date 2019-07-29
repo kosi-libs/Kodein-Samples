@@ -1,10 +1,15 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+val kodeinVersion: String by rootProject.extra
+
 plugins {
     id("org.jetbrains.kotlin.multiplatform")
 }
 
-val kodeinVersion: String by rootProject.extra
+repositories {
+    jcenter()
+    maven(url = "https://dl.bintray.com/kodein-framework/kodein-dev")
+}
 
 kotlin {
     targets {

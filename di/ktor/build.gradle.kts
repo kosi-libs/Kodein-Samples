@@ -1,7 +1,8 @@
-import org.jetbrains.kotlin.gradle.tasks.*
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val ktorVersion = "1.1.1"
 val logbackVersion = "1.2.3"
+val kodeinVersion: String by rootProject.extra
 
 plugins {
     kotlin("jvm")
@@ -9,6 +10,8 @@ plugins {
 }
 
 repositories {
+    jcenter()
+    maven(url = "https://dl.bintray.com/kodein-framework/kodein-dev")
     maven { setUrl("https://dl.bintray.com/kotlin/ktor") }
 }
 
@@ -23,7 +26,6 @@ tasks.withType<KotlinCompile> {
 }
 
 dependencies {
-    val kodeinVersion: String by rootProject.extra
     fun ktor(module: String = "", version: String = ktorVersion) = "io.ktor:ktor$module:$version"
 
     implementation(kotlin("stdlib-jdk8"))

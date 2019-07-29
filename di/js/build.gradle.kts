@@ -1,8 +1,13 @@
+val kodeinVersion: String by rootProject.extra
+
 plugins {
     kotlin("js")
 }
 
-val kodeinVersion: String by rootProject.extra
+repositories {
+    jcenter()
+    maven(url = "https://dl.bintray.com/kodein-framework/kodein-dev")
+}
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-js")
