@@ -1,11 +1,13 @@
 rootProject.name = "kodein-samples"
 
 include(
-    ":di:android",
+    // Coffee-Maker project, based on Dagger's example
     ":di:coffee-maker:common",
-    ":di:console",
-    ":di:js",
-    ":di:jvm",
-    ":di:ktor",
-    ":di:tornadofx"
+    ":di:coffee-maker:android",
+    ":di:coffee-maker:console",
+    ":di:coffee-maker:js",
+    ":di:coffee-maker:jvm",
+    // standalone smples
+    ":di:standalone:ktor",
+    ":di:standalone:tornadofx"
 )

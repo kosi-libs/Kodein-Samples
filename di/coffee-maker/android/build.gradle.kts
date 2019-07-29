@@ -9,8 +9,9 @@ plugins {
 }
 
 repositories {
-    jcenter()
     google()
+    mavenCentral()
+    jcenter()
     maven(url = "https://dl.bintray.com/kodein-framework/kodein-dev")
 }
 
