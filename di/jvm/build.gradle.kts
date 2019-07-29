@@ -14,7 +14,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib"))
     implementation("org.kodein.di:kodein-di-erased:$kodeinVersion")
-    implementation(project(":di:common"))
+    implementation(project(":di:coffee-maker:common"))
 }
 
 tasks.withType<KotlinCompile> {

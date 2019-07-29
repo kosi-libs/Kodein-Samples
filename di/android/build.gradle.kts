@@ -59,5 +59,5 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.0.2")
     implementation("org.kodein.di:kodein-di-generic-jvm:$kodeinVersion")
     implementation("org.kodein.di:kodein-di-framework-android-x:$kodeinVersion")
-    implementation(project(":di:common"))
+    implementation(project(":di:coffee-maker:common"))
 }

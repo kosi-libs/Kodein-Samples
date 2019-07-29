@@ -2,7 +2,7 @@ rootProject.name = "kodein-samples"
 
 include(
     ":di:android",
-    ":di:common",
+    ":di:coffee-maker:common",
     ":di:console",
     ":di:js",
     ":di:jvm",

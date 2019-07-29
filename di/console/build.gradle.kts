@@ -20,7 +20,7 @@ kotlin {
         getByName("commonMain").dependencies {
             implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
             implementation("org.kodein.di:kodein-di-erased:$kodeinVersion")
-            implementation(project(":di:common"))
+            implementation(project(":di:coffee-maker:common"))
         }
     }
 }
