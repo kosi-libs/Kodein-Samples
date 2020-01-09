@@ -8,20 +8,13 @@ plugins {
     id("kotlin-android-extensions")
 }
 
-repositories {
-    google()
-    mavenCentral()
-    jcenter()
-    maven(url = "https://dl.bintray.com/kodein-framework/kodein-dev")
-}
-
 android {
-    compileSdkVersion(28)
+    compileSdkVersion(29)
 
     defaultConfig {
         applicationId = "kodein.samples"
         minSdkVersion(16)
-        targetSdkVersion(28)
+        targetSdkVersion(29)
         versionCode = 1
         versionName = "1.0"
     }
@@ -57,7 +50,7 @@ android {
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7")
 
-    implementation("androidx.appcompat:appcompat:1.0.2")
+    implementation("androidx.appcompat:appcompat:1.1.0")
     implementation("org.kodein.di:kodein-di-generic-jvm:$kodeinVersion")
     implementation("org.kodein.di:kodein-di-framework-android-x:$kodeinVersion")
     implementation(project(":di:coffee-maker:common"))

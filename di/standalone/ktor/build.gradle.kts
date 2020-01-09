@@ -10,8 +10,6 @@ plugins {
 }
 
 repositories {
-    jcenter()
-    maven(url = "https://dl.bintray.com/kodein-framework/kodein-dev")
     maven { setUrl("https://dl.bintray.com/kotlin/ktor") }
 }
 

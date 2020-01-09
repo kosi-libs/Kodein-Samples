@@ -4,9 +4,17 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:3.5.0-rc01")
-        classpath(kotlin("gradle-plugin", version = "1.3.41"))
+        classpath("com.android.tools.build:gradle:3.5.3")
+        classpath(kotlin("gradle-plugin", version = "1.3.72"))
     }
 }
 
-extra.set("kodeinVersion", "6.4.0-dev+")
+extra.set("kodeinVersion", "7.0.0-dev+")
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+        maven(url = "https://dl.bintray.com/kodein-framework/kodein-dev")    }
+}

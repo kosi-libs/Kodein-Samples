@@ -6,11 +6,6 @@ plugins {
     kotlin("jvm")
 }
 
-repositories {
-    jcenter()
-    maven(url = "https://dl.bintray.com/kodein-framework/kodein-dev")
-}
-
 dependencies {
     implementation(kotlin("stdlib"))
     implementation("org.kodein.di:kodein-di-erased:$kodeinVersion")
