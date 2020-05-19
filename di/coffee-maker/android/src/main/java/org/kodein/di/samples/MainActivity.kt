@@ -4,18 +4,18 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import org.kodein.di.*
-import org.kodein.di.android.*
-import org.kodein.di.generic.instance
-import org.kodein.di.generic.kcontext
+import org.kodein.di.android.closestDI
+import org.kodein.di.android.di
+import org.kodein.di.android.retainedSubDI
 import org.kodein.di.samples.coffee.Coffee
 import org.kodein.di.samples.coffee.Kettle
 import org.kodein.di.samples.coffee.thermosiphonModule
 
-class MainActivity : AppCompatActivity(), KodeinAware {
+class MainActivity : AppCompatActivity(), DIAware {
 
-    override val kodeinContext: KodeinContext<*> = kcontext(this)
+    override val diContext: DIContext<*> = diContext(this)
 
-    override val kodein by retainedSubKodein(kodein(), copy = Copy.All) {
+    override val di by retainedSubDI(di(), copy = Copy.All) {
         import(thermosiphonModule)
     }
 
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity(), KodeinAware {
         }
 
         Log.i("Kodein", "=====================-BINDINGS-=====================")
-        Log.i("Kodein", kodein.container.tree.bindings.description())
+        Log.i("Kodein", di.container.tree.bindings.description())
         Log.i("Kodein", "====================================================")
     }
 

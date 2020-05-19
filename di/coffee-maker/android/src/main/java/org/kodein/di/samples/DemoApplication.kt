@@ -2,18 +2,16 @@ package org.kodein.di.samples
 
 import android.app.Activity
 import android.app.Application
-import org.kodein.di.Kodein
-import org.kodein.di.KodeinAware
-import org.kodein.di.android.x.androidXModule
 import org.kodein.di.bindings.WeakContextScope
-import org.kodein.di.generic.*
+import org.kodein.di.*
+import org.kodein.di.android.x.androidXModule
 import org.kodein.di.samples.coffee.Coffee
 import org.kodein.di.samples.coffee.Kettle
 import org.kodein.di.samples.coffee.electricHeaterModule
 
-class DemoApplication : Application(), KodeinAware {
+class DemoApplication : Application(), DIAware {
 
-    override val kodein by Kodein.lazy {
+    override val di by DI.lazy {
         import(androidXModule(this@DemoApplication))
 
         bind() from instance(AndroidLogger())
@@ -28,7 +26,7 @@ class DemoApplication : Application(), KodeinAware {
 
     override fun onCreate() {
         super.onCreate()
-        val k = kodein
+        val k = di
         println(k)
     }
 
