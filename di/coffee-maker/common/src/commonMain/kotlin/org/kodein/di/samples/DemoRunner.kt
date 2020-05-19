@@ -1,15 +1,14 @@
 package org.kodein.di.samples
 
-import org.kodein.di.Kodein
-import org.kodein.di.KodeinAware
-import org.kodein.di.erased.*
+import org.kodein.di.DI
+import org.kodein.di.*
 import org.kodein.di.samples.coffee.Coffee
 import org.kodein.di.samples.coffee.Kettle
 import org.kodein.di.samples.coffee.electricHeaterModule
 import org.kodein.di.samples.coffee.thermosiphonModule
 
-class KodeinMppApplication(override val kodein: Kodein) : KodeinAware {
-    private val _kettle: Kettle<Coffee> by instance()
+class KodeinMppApplication(override val di: DI) : DIAware {
+    private val _kettle: Kettle<Coffee> by Instance(org.kodein.type.erased())
     private val _logger: CommonLogger by instance()
 
     init {
@@ -21,7 +20,7 @@ class KodeinMppApplication(override val kodein: Kodein) : KodeinAware {
     }
 }
 
-val commonKodein = Kodein.Module("MPP Kodein Module") {
+val commonKodein = DI.Module("MPP Kodein Module") {
     import(thermosiphonModule)
     import(electricHeaterModule)
 

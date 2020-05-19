@@ -1,10 +1,10 @@
 package org.kodein.di.samples.coffee
 
 import org.kodein.di.samples.CommonLogger
-import org.kodein.di.Kodein
-import org.kodein.di.erased.bind
-import org.kodein.di.erased.instance
-import org.kodein.di.erased.singleton
+import org.kodein.di.DI
+import org.kodein.di.bind
+import org.kodein.di.instance
+import org.kodein.di.singleton
 
 class ElectricHeater(private val log: CommonLogger) : Heater {
     private var heating: Boolean = false
@@ -26,6 +26,6 @@ class ElectricHeater(private val log: CommonLogger) : Heater {
     override val isHot: Boolean get() = heating
 }
 
-val electricHeaterModule = Kodein.Module("Electric Heater") {
+val electricHeaterModule = DI.Module("Electric Heater") {
     bind<Heater>() with singleton { ElectricHeater(instance()) }
 }
