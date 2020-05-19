@@ -1,12 +1,11 @@
 package org.kodein.di.samples
 
-import org.kodein.di.Kodein
-import org.kodein.di.erased.bind
-import org.kodein.di.erased.singleton
+import org.kodein.di.DI
+import org.kodein.di.*
 
 fun runKodeinMppApplication() {
     KodeinMppApplication(
-        Kodein {
+        DI {
             import(commonKodein)
             bind<CommonLogger>() with singleton { ConsoleLogger() }
         }
