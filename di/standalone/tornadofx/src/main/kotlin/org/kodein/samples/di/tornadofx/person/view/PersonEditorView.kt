@@ -4,13 +4,9 @@ import javafx.beans.binding.Bindings
 import javafx.scene.control.Tab
 import javafx.scene.control.TabPane
 import javafx.scene.layout.Priority
-import org.kodein.di.Kodein
-import org.kodein.di.KodeinAware
-import org.kodein.di.generic.instance
-import org.kodein.di.generic.on
-import org.kodein.di.generic.with
-import org.kodein.di.tornadofx.kodein
-import org.kodein.di.tornadofx.subKodein
+import org.kodein.di.*
+import org.kodein.di.tornadofx.kodeinDI
+import org.kodein.di.tornadofx.subDI
 import org.kodein.samples.di.tornadofx.person.model.EditingState
 import org.kodein.samples.di.tornadofx.person.model.PersonRepository
 import org.kodein.samples.di.tornadofx.person.model.PersonScope
@@ -22,7 +18,7 @@ class PersonEditorView : View() {
     override val root = hbox {
         tabpane {
 
-            val test: String by kodein().instance("test")
+            val test: String by kodeinDI().instance("test")
             println("tabpane: $test")
 
             hboxConstraints { hGrow = Priority.ALWAYS }
@@ -31,8 +27,8 @@ class PersonEditorView : View() {
     }
 }
 
-class EditorTabFragment : Fragment(), KodeinAware {
-    override val kodein: Kodein = subKodein {
+class EditorTabFragment : Fragment(), DIAware {
+    override val di: DI = subDI {
         constant("item") with "Person"
     }
 
@@ -46,15 +42,15 @@ class EditorTabFragment : Fragment(), KodeinAware {
     lateinit var tab: Tab
 
     override val root = hbox {
-        val test: String by kodein().instance("test")
+        val test: String by kodeinDI().instance("test")
         println("hbox: $test")
 
         form {
-            subKodein(allowSilentOverride = true) {
+            subDI(allowSilentOverride = true) {
                 constant("test") with "MyForm"
             }
 
-            val test2: String by kodein().instance("test")
+            val test2: String by kodeinDI().instance("test")
             println("form: $test2")
 
             fieldset("Edit $item") {

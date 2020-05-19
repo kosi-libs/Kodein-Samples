@@ -1,8 +1,8 @@
 package org.kodein.samples.di.tornadofx
 
-import org.kodein.di.Kodein
-import org.kodein.di.KodeinAware
-import org.kodein.di.generic.*
+import org.kodein.di.DI
+import org.kodein.di.DIAware
+import org.kodein.di.*
 import org.kodein.di.tornadofx.ComponentScope
 import org.kodein.di.tornadofx.installTornadoSource
 import org.kodein.samples.di.tornadofx.person.model.EditingState
@@ -16,8 +16,8 @@ import tornadofx.View
 import tornadofx.splitpane
 import tornadofx.vbox
 
-class KodeinApplication : App(MainView::class), KodeinAware {
-    override val kodein: Kodein = Kodein {
+class KodeinApplication : App(MainView::class), DIAware {
+    override val di: DI = DI {
         installTornadoSource()
 
         constant("test") with "MyApp"

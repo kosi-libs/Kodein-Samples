@@ -1,7 +1,7 @@
 package org.kodein.samples.di.tornadofx.person.view
 
-import org.kodein.di.generic.instance
-import org.kodein.di.tornadofx.kodein
+import org.kodein.di.instance
+import org.kodein.di.tornadofx.kodeinDI
 import org.kodein.samples.di.tornadofx.person.controller.PersonListController
 import org.kodein.samples.di.tornadofx.person.model.Person
 import tornadofx.View
@@ -10,7 +10,7 @@ import tornadofx.onUserSelect
 import tornadofx.tableview
 
 class PersonListView : View() {
-    private val listController: PersonListController by kodein().instance()
+    private val listController: PersonListController by kodeinDI().instance()
 
     override val root = tableview(listController.personList) {
         column("ID", Person::idProperty)
