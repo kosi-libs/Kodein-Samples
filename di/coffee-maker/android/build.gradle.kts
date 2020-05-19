@@ -8,6 +8,14 @@ plugins {
     id("kotlin-android-extensions")
 }
 
+repositories {
+    google()
+    mavenCentral()
+    mavenLocal()
+    jcenter()
+    maven(url = "https://dl.bintray.com/kodein-framework/kodein-dev")
+}
+
 android {
     compileSdkVersion(29)
 
@@ -40,6 +48,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     tasks.withType<KotlinCompile> {
         kotlinOptions {
             jvmTarget = "1.8"
@@ -50,8 +59,8 @@ android {
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7")
 
-    implementation("androidx.appcompat:appcompat:1.1.0")
-    implementation("org.kodein.di:kodein-di-generic-jvm:$kodeinVersion")
+    implementation("androidx.appcompat:appcompat:1.0.1")
+    implementation("org.kodein.di:kodein-di:$kodeinVersion")
     implementation("org.kodein.di:kodein-di-framework-android-x:$kodeinVersion")
     implementation(project(":di:coffee-maker:common"))
 }

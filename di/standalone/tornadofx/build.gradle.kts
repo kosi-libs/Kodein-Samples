@@ -18,6 +18,6 @@ tasks.withType<KotlinCompile> {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation("no.tornado:tornadofx:1.7.19")
-    implementation("org.kodein.di:kodein-di-generic-jvm:$kodeinVersion")
+    implementation("org.kodein.di:kodein-di:$kodeinVersion")
     implementation("org.kodein.di:kodein-di-framework-tornadofx-jvm:$kodeinVersion")
 }

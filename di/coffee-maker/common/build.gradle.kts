@@ -27,7 +27,7 @@ kotlin {
     sourceSets {
         getByName("commonMain").dependencies {
             implementation(kotlin("stdlib-common"))
-            implementation("org.kodein.di:kodein-di-erased:$kodeinVersion")
+            implementation("org.kodein.di:kodein-di:$kodeinVersion")
         }
         getByName("jvmMain").dependencies {
             implementation(kotlin("stdlib-jdk8"))

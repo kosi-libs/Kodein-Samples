@@ -8,7 +8,7 @@ plugins {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    implementation("org.kodein.di:kodein-di-erased:$kodeinVersion")
+    implementation("org.kodein.di:kodein-di:$kodeinVersion")
     implementation(project(":di:coffee-maker:common"))
 }
 
