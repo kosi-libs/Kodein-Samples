@@ -32,7 +32,6 @@ dependencies {
     implementation(ktor("-html-builder"))
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
 
-    implementation("org.kodein.di:kodein-di:$kodeinVersion")
     implementation("org.kodein.di:kodein-di-framework-ktor-server-jvm:$kodeinVersion")
 }
 

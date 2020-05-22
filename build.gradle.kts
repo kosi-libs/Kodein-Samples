@@ -9,7 +9,7 @@ buildscript {
     }
 }
 
-extra.set("kodeinVersion", "7.0.0-dev-47")
+extra.set("kodeinVersion", "7.0.0")
 
 allprojects {
     repositories {
