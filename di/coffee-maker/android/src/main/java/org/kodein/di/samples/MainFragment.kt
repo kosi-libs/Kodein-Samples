@@ -7,18 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_main.*
-import org.kodein.di.DI
-import org.kodein.di.DIAware
-import org.kodein.di.android.closestDI
-import org.kodein.di.android.x.closestDI
+import org.kodein.di.*
+import org.kodein.di.android.subDI
 import org.kodein.di.android.x.di
-import org.kodein.di.instance
 import org.kodein.di.samples.coffee.Coffee
 import org.kodein.di.samples.coffee.Kettle
 
 class MainFragment : Fragment(), DIAware {
 
-    override val di: DI by di()
+    override val di: DI by subDI(di()) {}
 
     // will be the same instance as the coffeeMaker in MainActivity
     val coffeeMaker: Kettle<Coffee> by instance()

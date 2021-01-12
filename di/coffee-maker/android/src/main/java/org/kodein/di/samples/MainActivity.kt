@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import org.kodein.di.*
-import org.kodein.di.android.closestDI
 import org.kodein.di.android.di
 import org.kodein.di.android.retainedSubDI
 import org.kodein.di.samples.coffee.Coffee
