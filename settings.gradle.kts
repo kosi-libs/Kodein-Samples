@@ -7,7 +7,7 @@ include(
     ":di:coffee-maker:android",
     ":di:coffee-maker:js",
     ":di:coffee-maker:jvm",
-    // standalone smples
+    // standalone samples
     ":di:standalone:ktor",
     ":di:standalone:tornadofx",
     ""
